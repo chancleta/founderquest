@@ -1,0 +1,135 @@
+@import "../../bower_components/material-design-lite/src/material-design-lite";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/table-row";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/tables";
+
+.importer {
+  .importer-navMenu {
+    .mdl-navigation__link:hover, .mdl-navigation__link.is-active {
+      background-color: #00BCD4;
+    }
+  }
+  .mdl-layout__drawer-button {
+    color: #00BCD4;
+  }
+
+  .importer-menuHeader {
+    padding: 16px;
+    .importer-menuHeader__profileImage {
+      width: 48px;
+      height: 48px;
+      border-radius: 24px;
+    }
+  }
+
+  .importer-form {
+
+    .mdl-textfield.is-invalid .mdl-textfield__input {
+      border-bottom: 1px solid rgba(0, 0, 0, .12);
+    }
+
+    .mdl-textfield--floating-label.is-invalid .mdl-textfield__label {
+      color: rgba(0, 0, 0, .26);
+    }
+
+    .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+    .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
+      color: rgb(63, 81, 181);
+    }
+
+    .mdl-textfield.is-invalid .mdl-textfield__label:after {
+      background-color: rgb(63, 81, 181);
+    }
+    /*Validation styles based on MDL*/
+
+    .ng-invalid.ng-invalid.ng-touched {
+      border-color: rgb(222, 50, 38);
+      box-shadow: none;
+    }
+
+    .ng-invalid.ng-invalid.ng-touched + label {
+      color: rgb(222, 50, 38);
+      font-size: 12px;
+    }
+
+    .ng-invalid.ng-invalid.ng-touched + .mdl-textfield__label--icon .material-icons {
+      color: rgb(222, 50, 38);
+    }
+
+    .mdl-textfield__label{
+      color: rgba(0,0,0, 0.6);
+    }
+    .ng-invalid.ng-invalid.ng-touched + label:after {
+      background-color: rgb(222, 50, 38);
+    }
+
+    .ng-invalid.ng-invalid.ng-untouched + label + span {
+      visibility: hidden;
+    }
+
+    button {
+      margin: 0 auto;
+    }
+
+    .form-formControls {
+      .form-formControls__title {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+    .form-csvData {
+      .form-csvData__title {
+        text-align: center;
+        margin: 0;
+      }
+
+      .form-csvData__textArea {
+        min-height: 250px;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+      }
+
+    }
+  }
+
+  .mdl-textfield__label--icon {
+    top: 17px;
+    .material-icons {
+      color: rgb(63,81,181);
+    }
+  }
+}
+
+#toastError {
+  background-color: rgb(222, 50, 38);
+}
+
+#toastSuccess {
+  background-color: rgb(76, 175, 80);
+}
+
+.table>thead>tr>th, .table>thead>tr>td, .table>tbody>tr>th, .table>tbody>tr>td, .table>tfoot>tr>th, .table>tfoot>tr>td{
+  text-align: center;
+  &:first-child{
+    text-align: left;
+  }
+}
+#homeDashboard{
+  position: fixed;
+  z-index: 1;
+  margin-left: 10px;
+  margin-top: 55px;
+}
+.mdl-dialog{
+  display: none;
+  position: fixed;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  right: inherit;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  background: white;
+
+}

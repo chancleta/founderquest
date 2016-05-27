@@ -1,0 +1,9 @@
+.idea/
+bower_components/
+node_modules/
+dist/
+app/typescripts/*.js
+app/typescripts/*.map
+app/js/**/*
+app/styles/**/*
+typings/

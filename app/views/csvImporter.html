@@ -1,0 +1,111 @@
+<div class="mdl-grid">
+
+    <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+
+        <form action="#" class="importer-form" name="csvForm">
+
+            <div class="mdl-grid">
+
+                <div class="form-formControls mdl-cell mdl-cell--12-col">
+                    <div class="mdl-grid">
+                        <div class="form-csvData mdl-cell mdl-cell--12-col">
+                            <h5 class="form-csvData__title mdl-color-text--grey-600">Paste CSV Data</h5>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">
+                                        <textarea class="mdl-textfield__input form-csvData__textArea" type="text"
+                                                  name="csvData" id="csvData" ng-model="vm.importData.csvContent"
+                                                  required></textarea>
+                                <label class="mdl-textfield__label" for="csvData">CSV Content...</label>
+                                <span class="mdl-textfield__error">Required</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mdl-textfield mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+
+                            <h6 class="form-formControls__title">Separated By:</h6>
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="comma">
+                                <input type="radio" id="comma" class="mdl-radio__button" name="separatedBy"
+                                       value="0" ng-model="vm.importData.separatedBy">
+                                <span class="mdl-radio__label">Comma (,)</span>
+                            </label>
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="semicolon">
+                                <input type="radio" id="semicolon" class="mdl-radio__button" name="separatedBy"
+                                       value="1" ng-model="vm.importData.separatedBy">
+                                <span class="mdl-radio__label">Semicolon (;)</span>
+                            </label>
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="tab">
+                                <input type="radio" id="tab" class="mdl-radio__button" name="separatedBy"
+                                       value="2" ng-model="vm.importData.separatedBy">
+                                <span class="mdl-radio__label">Tab (&nbsp;)</span>
+                            </label>
+
+                        </div>
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+
+                            <div class="mdl-textfield mdl-js-textfield">
+
+                                <input class="mdl-textfield__input" type="text" id="latitudeName"
+                                       name="latitudeName" ng-model="vm.importData.latitudeName" required>
+
+                                <label class="mdl-textfield__label mdl-textfield__label--icon" for="latitudeName">
+                                    <i class="material-icons">place</i>Latitude Column Name</label>
+                                <span class="mdl-textfield__error">Required</span>
+
+                            </div>
+                        </div>
+
+                        <div class="mdl-textfield mdl-js-textfield  mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input " type="text" id="longitudeName"
+                                       name="longitudeName" ng-model="vm.importData.longitudeName" required>
+                                <label class="mdl-textfield__label mdl-textfield__label--icon" for="longitudeName">
+                                    <i class="material-icons">place</i>Longitude Column
+                                    Name</label>
+                                <span class="mdl-textfield__error">Required</span>
+
+                            </div>
+                        </div>
+
+                        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                            <div class="mdl-grid">
+
+                                <div class="mdl-cell mdl-cell--12-col">
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
+                                           for="useMarker">
+                                        <input type="checkbox" id="useMarker" class="mdl-checkbox__input"
+                                               ng-model="vm.importData.useMakerLabel" name="useMarker">
+                                        <span class="mdl-checkbox__label">Use Maker Label</span>
+                                    </label>
+                                </div>
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col"
+                                     ng-show="vm.importData.useMakerLabel">
+                                    <input class="mdl-textfield__input" type="text" id="markerName"
+                                           name="markerName" ng-model="vm.importData.markerName"
+                                           ng-required="vm.importData.useMakerLabel" required>
+                                    <label class="mdl-textfield__label mdl-textfield__label--icon" for="markerName">
+                                        <i class="material-icons">pin_drop</i>Marker column
+                                        name</label>
+                                    <span class="mdl-textfield__error">required</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                                ng-click="vm.processCSV(csvForm)" ng-disabled="csvForm.$invalid || vm.processingData"
+                                type="button">Upload
+                            <i class="material-icons">send</i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>

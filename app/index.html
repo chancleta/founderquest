@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="foundersmap">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+    <title>Founder's Map Quest</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+    <link href="styles/style.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+<div ui-view></div>
+
+
+<!-- bower:js -->
+<script src="js/vendor.js" type="application/javascript"></script>
+<!-- endbower -->
+
+<!-- build:js js/main.js -->
+<script src="js/models/CSVEntryModel.js" type="application/javascript"></script>
+<script src="js/models/CVSImportModel.js" type="application/javascript"></script>
+
+<script src="js/services/ResourceLoader.js" type="application/javascript"></script>
+
+<script src="js/controllers/HomeCtrl.js" type="application/javascript"></script>
+<script src="js/controllers/DashboardCtrl.js" type="application/javascript"></script>
+<script src="js/controllers/SummaryCtrl.js" type="application/javascript"></script>
+<script src="js/controllers/CSVImporterCtrl.js" type="application/javascript"></script>
+
+<script src="js/app.js" type="application/javascript"></script>
+
+<!-- endbuild -->
+
+</body>
+</html>

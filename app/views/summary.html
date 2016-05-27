@@ -1,0 +1,104 @@
+<div class="mdl-grid">
+
+    <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+
+        <form action="#" class="importer-form" name="csvForm">
+
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <i class="material-icons" id="filterIcon">search</i>
+
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="filterText" ng-model="vm.filterText" ng-change="vm.reloadMaterialDesign()">
+                        <label class="mdl-textfield__label mdl-textfield__label--icon" for="filterText">
+                            Filter</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="table-responsive">
+
+                <table class="mdl-data-table table">
+                    <thead>
+
+                    <tr>
+                        <th>Exclude</th>
+                        <th>Company Name</th>
+                        <th>Founder</th>
+                        <th>City</th>
+                        <th>Country</th>
+                        <th class="mdl-cell--hide-tablet mdl-cell--hide-phone">Postal Code</th>
+                        <th class="mdl-cell--hide-tablet mdl-cell--hide-phone">Street</th>
+                        <th>Photo</th>
+                        <th>Home Page</th>
+                        <th class="mdl-cell--hide-phone">Latitude</th>
+                        <th class="mdl-cell--hide-phone">Longitude</th>
+                        <th class="mdl-cell--hide-phone">Marker's Label</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="entry in vm.dataEntries | filter:vm.filterText">
+                        <td>
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox{{$index}}">
+                                <input type="checkbox" id="checkbox{{$index}}" class="mdl-checkbox__input" ng-checked="entry.active" ng-click="vm.updateEntryStatus(entry)">
+                            </label>
+
+                        </td>
+                        <td>
+                            <span class="mdl-checkbox__label">{{entry.companyName}}</span>
+
+                        </td>
+                        <td>
+                            {{entry.founder}}
+                        </td>
+                        <td>
+                            {{entry.city}}
+                        </td>
+                        <td>
+                            {{entry.country}}
+                        </td>
+                        <td class="mdl-cell--hide-tablet mdl-cell--hide-phone">
+                            {{entry.postalCode}}
+                        </td>
+                        <td class="mdl-cell--hide-tablet mdl-cell--hide-phone">
+                            {{entry.street}}
+                        </td>
+                        <td>
+                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+                                    data-img-src="{{entry.photo}}" type="button" ng-click="vm.deployDialog(entry)">
+                                <i class="material-icons">pageview</i>
+                            </button>
+
+                        </td>
+                        <td>
+                            {{entry.homePage}}
+                        </td>
+                        <td class="mdl-cell--hide-phone">
+                            {{entry.latitude}}
+                        </td>
+                        <td class="mdl-cell--hide-phone">
+                            {{entry.longitude}}
+                        </td>
+                        <td class="mdl-cell--hide-phone">
+                            {{entry.markerName}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+<dialog class="mdl-dialog" >
+    <h4 class="mdl-dialog__title"></h4>
+    <div class="mdl-dialog__content">
+        <img id="dialogImage" />
+    </div>
+    <div class="mdl-dialog__actions">
+        <button type="button" class="mdl-button close" ng-click="vm.closeDialog()">Close</button>
+    </div>
+</dialog>
